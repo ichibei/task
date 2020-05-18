@@ -1,4 +1,17 @@
-<?php    
+<?php
+/**
+ * Try to read PSR-1, PSR-2
+ * https://www.php-fig.org/psr/psr-1/
+ * https://www.php-fig.org/psr/psr-2/
+ * In russian:
+ * https://svyatoslav.biz/misc/psr_translation/#_PSR-1
+ * https://svyatoslav.biz/misc/psr_translation/#_PSR-2
+ */
+
+/**
+ * Try use better variables naming (not a, b, c, d, etc.)
+ */
+
 function rept($a, $t=array(), $n=array()) {
     $i=0;
     $b=0;

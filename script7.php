@@ -1,4 +1,7 @@
-<?php    
+<?php
+/**
+ * Function should return boolean type, not a string
+ */
 function year($a) {
     if (($a%4) || !($a%100) && ($a%400)) {
                 $b='FALSE';

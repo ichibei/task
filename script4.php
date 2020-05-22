@@ -1,18 +1,15 @@
 <?php
-function count_element ($a) {
-    $b=2; //заданное значение
-    $i=0;
-    foreach ($a as $value)    
-    if ($b==$value) {
-        $i++;   
+function count_element ($array1, $element) {    
+    $quantity=0;
+    foreach ($array1 as $value)    
+    if ($element==$value) {
+        $quantity++;   
     } elseif (is_array ($value)) {
-        $i += count_element ($value);
-          
+        $quantity += count_element ($value, $element);  
     }
-       return $i;
+    return $quantity;
 }
-$a = [18, 2, 5, $a1=[5,2,'$a4'=>[1, 2, "string1", 2.5, "string2"],"string1", 2.5, "string2"], 'world'=>[5,2,3,5.7,"string3",2.6,"string4"],7,9,];
-
-//print_r (int_num($a));
-echo (count_element($a));
+$array1 = [18, 2, 5, $a1=[5,2,'$a4'=>[1, 2, "string1", 2.5, "string2"],"string1", 2.5, "string2"], 'world'=>[5,2,3,5.7,"string3",2.6,"string4"],7,9,];
+$element=2;
+echo (count_element($array1, $element));
 ?>

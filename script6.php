@@ -1,27 +1,22 @@
 <?php    
-function rept($a, $t=array()) {
-    $i=0;
-    $b=0;
-    while ($i < count($a)) {
-        $k=0;
-        $b=$a[$i];
-        foreach ($a as $val) {
-            if ($b===$val && !(in_array ($b,$t,true))) {
-                $k++;
+function unique_elements($array1, $array_of_unique_values = array()) {
+    $key=0;
+    $value_to_compare=0;
+    while ($key < count($array1)) {
+        $quantity = 0;
+        $value_to_compare = $array1[$key];
+        foreach ($array1 as $value) {
+            if ($value_to_compare === $value && !(in_array ($value_to_compare,$array_of_unique_values,true))) {
+                $quantity++;
             }
         }
-        if ($k<2) {
-        $t[]=$b;
+        if ($quantity < 2) {
+        $array_of_unique_values[] = $value_to_compare;
         }
-        $i++;
+        $key++;
     }
-    return $t;
+    return $array_of_unique_values;
 }           
-$a=[2,1,1,2.7,1,1,2.9,1,2.1,3,3,3,3];
-//$a[0] = 1;
-//$a[1] = 3;
-//$a[2] = 5;
-//var_dump(count($a));
-//echo ($a[0]);
-print_r (rept($a));
+$array1=[2,1,1,2.7,1,1,2.9,1,2.1,3,3,3,3];
+print_r (unique_elements($array1));
 ?>

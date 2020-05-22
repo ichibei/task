@@ -1,14 +1,14 @@
 <?php    
-function year($a) {
-    if (($a%4) || !($a%100) && ($a%400)) {
-                $b='FALSE';
+function Is_it_a_year_leap($year) {
+    if (($year%4) || !($year%100) && ($year%400)) {
+                $leap_year = true;
             }
             else {
-                $b='TRUE';
+                $leap_year = false;
             }
     return $b;
 }
-//$a=1700;  
-$a=date("Y");         
-echo (year($a));
+//$year=1700;  
+$year = date("Y");         
+echo (Is_it_a_year_leap($year));
 ?>
